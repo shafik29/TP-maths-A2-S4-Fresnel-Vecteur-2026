@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Animation Vecteur de Fresnel</title>
+  </head>
+  <body>
+    <div class="logo-container">
+      <img src="/orange_brown_minimalist_school_logo-106.png" alt="MathForge Logo" class="site-logo">
+    </div>
+
+    <div class="container">
+      <header>
+        <h1>Représentation d'un signal sinusoïdal et son vecteur de Fresnel</h1>
+        <p class="subtitle">Animation pédagogique interactive</p>
+      </header>
+
+      <main>
+        <!-- Boutons pédagogiques principaux -->
+        <section class="signal-controls">
+          <h2>Étude des signaux</h2>
+          <p class="instruction">Cliquez sur un bouton pour afficher le signal et son vecteur de Fresnel</p>
+          <div class="signal-buttons">
+            <button id="btn-signal-1" class="signal-btn">
+              <span class="signal-label">Signal i₁(t)</span>
+              <span class="signal-formula">i₁(t) = 3 sin(314t + 5π/12)</span>
+            </button>
+            <button id="btn-signal-2" class="signal-btn">
+              <span class="signal-label">Signal i₂(t)</span>
+              <span class="signal-formula">i₂(t) = 4 sin(314t - π/6)</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Informations sur les signaux affichés -->
+        <section class="signal-info" id="signal-info" style="display: none;">
+          <h2>Informations</h2>
+          <div id="info-signal-1" class="info-box" style="display: none;">
+            <h3>Signal i₁(t)</h3>
+            <p>Amplitude : <strong>a = 3 A</strong></p>
+            <p>Pulsation : <strong>ω = 314 rad/s</strong></p>
+            <p>Phase initiale : <strong>φ = 5π/12 rad ≈ 1.31 rad (75°)</strong></p>
+          </div>
+          <div id="info-signal-2" class="info-box" style="display: none;">
+            <h3>Signal i₂(t)</h3>
+            <p>Amplitude : <strong>a = 4 A</strong></p>
+            <p>Pulsation : <strong>ω = 314 rad/s</strong></p>
+            <p>Phase initiale : <strong>φ = -π/6 rad ≈ -0.52 rad (-30°)</strong></p>
+          </div>
+        </section>
+
+        <!-- Contrôles de l'animation -->
+        <section class="animation-controls">
+          <h2>Animation</h2>
+          <div class="button-group">
+            <button id="btn-animation" class="toggle-btn">Démarrer l'animation</button>
+            <button id="btn-reset">Retour à t = 0</button>
+          </div>
+        </section>
+
+        <!-- Zone de visualisation -->
+        <section class="visualization">
+          <!-- Graphique temporel -->
+          <div class="graph-container">
+            <h3>Représentation temporelle</h3>
+            <canvas id="temporal-graph" width="700" height="350"></canvas>
+          </div>
+
+          <!-- Vecteur de Fresnel -->
+          <div class="fresnel-container">
+            <h3>Vecteurs de Fresnel (t = 0)</h3>
+            <canvas id="fresnel-diagram" width="500" height="500"></canvas>
+          </div>
+        </section>
+
+        <!-- Zone de validation pédagogique -->
+        <section class="validation-zone">
+          <h2>Zone de validation pédagogique</h2>
+          <p class="instruction">Testez vos propres signaux en saisissant une fonction sinusoïdale</p>
+
+          <div class="input-group">
+            <label for="custom-function">Fonction à analyser</label>
+            <input
+              type="text"
+              id="custom-function"
+              placeholder="Exemple : 3*sin(314*t + 5*pi/12) ou 4*sin(314*t - pi/6)"
+              aria-label="Saisir une fonction sinusoïdale"
+            >
+            <button id="btn-validate" class="validate-btn">Valider et afficher</button>
+          </div>
+
+          <div id="validation-result" class="validation-result" style="display: none;"></div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p class="footer-author">M. BEN AHMED</p>
+        <p class="footer-contact">
+          <a href="mailto:shafik.ben-ahmed@ac-nice.fr">shafik.ben-ahmed@ac-nice.fr</a>
+        </p>
+        <p class="footer-year">© 2026 - Licence Creative Commons (CC BY-NC-SA)</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
